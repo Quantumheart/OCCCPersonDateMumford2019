@@ -10,7 +10,7 @@ OCCCDate::OCCCDate()
 	tm TM = *localtime(&tt);
 
 	year = TM.tm_year + 1900;
-	month = TM.tm_mon;
+	month = TM.tm_mon +1;
 	day = TM.tm_mday;
 
 	this->dayOfMonth = day;
