@@ -49,40 +49,40 @@ std::string OCCCDate::getNameOfMonth(int id)
 
 	switch (id)
 	{
-	case 1: Month = "January";
+	case 0: Month = "January";
 		break;
 
-	case 2: Month = "February";
+	case 1: Month = "February";
 		break;
 
-	case 3: Month = "March";
+	case 2: Month = "March";
 		break;
 
-	case 4: Month = "April";
+	case 3: Month = "April";
 		break;
 
-	case 5: Month = "May";
+	case 4: Month = "May";
 		break;
 
-	case 6: Month = "June";
+	case 5: Month = "June";
 		break;
 
-	case 7: Month = "July";
+	case 6: Month = "July";
 		break;
 
-	case 8: Month = "August";
+	case 7: Month = "August";
 		break;
 
-	case 9: Month = "September";
+	case 8: Month = "September";
 		break;
 
-	case 10: Month = "October";
+	case 9: Month = "October";
 		break;
 
-	case 11: Month = "November";
+	case 10: Month = "November";
 		break;
 
-	case 12: Month = "December";
+	case 11: Month = "December";
 		break;
 	}
 	return Month;
@@ -99,6 +99,7 @@ int OCCCDate::getDifference(OCCCDate d)
 
 void OCCCDate::setDateFormat(bool df)
 {
+	this->dateFormat = df;
 }
 
 bool OCCCDate::equals(OCCCDate d)
@@ -108,7 +109,15 @@ bool OCCCDate::equals(OCCCDate d)
 
 std::string OCCCDate::toString() 
 {
-	// needs to return a 
-	std::string toString = "";
+	
+	std::string toString;
+	if (dateFormat) 
+	{
+		toString = monthOfYear + '/' + dayOfMonth + '/' + year;
+	}
+	else 
+	{
+		toString = dayOfMonth + '/' + monthOfYear + '/' + year;
+	}
 	return toString;
 }

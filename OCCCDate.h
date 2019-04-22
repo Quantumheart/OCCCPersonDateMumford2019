@@ -8,7 +8,7 @@ private:
 	int dayOfMonth;
 	int monthOfYear;
 	int year;
-	bool dateFormat;
+	bool dateFormat = true;
 
 public:
 
