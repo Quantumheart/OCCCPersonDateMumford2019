@@ -1,9 +1,21 @@
 #include "OCCCDate.h"
-
+#include <ctime>
+#include <iomanip>
 
 OCCCDate::OCCCDate()
 {
+	int day, month, year;
+	time_t tt;
+	time(&tt);
+	tm TM = *localtime(&tt);
 
+	year = TM.tm_year + 1900;
+	month = TM.tm_mon;
+	day = TM.tm_mday;
+
+	this->dayOfMonth = day;
+	this->monthOfYear = month;
+	this->year = year;
 }
 
 
@@ -91,6 +103,7 @@ void OCCCDate::setDateFormat(bool df)
 
 bool OCCCDate::equals(OCCCDate d)
 {
+
 }
 
 std::string OCCCDate::toString() 
