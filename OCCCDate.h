@@ -21,7 +21,6 @@ public:
 	int getDifference(OCCCDate d1, OCCCDate d2);
 	int getDifference(OCCCDate d);
 	void setDateFormat(bool df);
-	bool equals(OCCCDate d);
 	std::string toString();
 };
 

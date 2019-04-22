@@ -99,7 +99,7 @@ int OCCCDate::getDifference(OCCCDate d)
 	
 	time_t now = time(0);
 	tm* ltm = localtime(&now);
-	int result = d.year - ltm->tm_year;
+	int result = d.year - ltm->tm_year+1900; 
 	return result;
 }
 
