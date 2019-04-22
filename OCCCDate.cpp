@@ -108,11 +108,6 @@ void OCCCDate::setDateFormat(bool df)
 	this->dateFormat = df;
 }
 
-bool OCCCDate::equals(OCCCDate d)
-{
-
-}
-
 std::string OCCCDate::toString() 
 {
 	
