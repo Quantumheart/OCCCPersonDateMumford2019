@@ -1,7 +1,7 @@
 #include "OCCCDate.h"
 #include <ctime>
 #include <iomanip>
-
+#pragma warning(disable : 4996)
 OCCCDate::OCCCDate()
 {
 	int day, month, year;
@@ -114,11 +114,12 @@ std::string OCCCDate::toString()
 	std::string toString;
 	if (dateFormat) 
 	{
-		toString = monthOfYear + '/' + dayOfMonth + '/' + year;
+		toString = std::to_string(monthOfYear) + '/' + std::to_string(dayOfMonth) + '/' + std::to_string(year);
+		return toString;
 	}
 	else 
 	{
-		toString = dayOfMonth + '/' + monthOfYear + '/' + year;
+		toString = std::to_string(dayOfMonth) + '/' + std::to_string(monthOfYear) + '/' + std::to_string(year);
+		return toString;
 	}
-	return toString;
 }
