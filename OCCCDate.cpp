@@ -90,14 +90,17 @@ std::string OCCCDate::getNameOfMonth(int id)
 
 int OCCCDate::getDifference(OCCCDate d1, OCCCDate d2)
 {
-	int result; 
-	result = d2.year - d1.year;
+	int result = d2.year - d1.year;
 	return result;
 }
 
 int OCCCDate::getDifference(OCCCDate d)
 {
-
+	
+	time_t now = time(0);
+	tm* ltm = localtime(&now);
+	int result = d.year - ltm->tm_year;
+	return result;
 }
 
 void OCCCDate::setDateFormat(bool df)
