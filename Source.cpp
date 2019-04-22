@@ -33,6 +33,7 @@ int main()
 		cin >> yyyy;
 		cin.ignore();
 		OCCCDate dob1(dd, mm, yyyy);
+		cout << "he was born in: " << dob1.getNameOfMonth(mm);
 		cout << "he's been alive! " << dob1.getDifference(dob1);
 		cout << "Change your first name!: ";
 		getline(cin, fName);
